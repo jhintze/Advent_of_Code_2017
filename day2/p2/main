@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+#input = File.read("./input")
+
+checksum = 0;
+
+File.readlines("./input").each do |line|
+ nums = line.split
+
+  for i in 0...nums.length
+	for j in 0...nums.length
+	  if (nums[i].to_i % nums[j].to_i == 0) && nums[i] != nums[j]
+	    checksum += nums[i].to_i / nums[j].to_i
+	  elsif (nums[j].to_i % nums[i].to_i == 0) && nums[i] != nums[j]
+	    checksum += nums[j].to_i / nums[i].to_i
+	  end
+	end
+  end
+end
+checksum = checksum / 2
+puts checksum
+
+
+
+
