@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+input = File.read("./input")
+
+digits = input.chars
+
+sum = 0;
+
+for num in 0...digits.length
+  if digits[num] == digits[(num+1)%(digits.length-1)]
+	sum = sum + digits[num].to_i
+  end
+end
+puts sum
+

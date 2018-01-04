@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+#input = File.read("./input")
+
+checksum = 0;
+
+File.readlines("./input").each do |line|
+ nums = line.split
+ max = nums[0].to_i
+ min = nums[0].to_i
+
+  for i in 0...nums.length
+   if nums[i].to_i > max
+	max = nums[i].to_i
+   end
+   if nums[i].to_i < min
+	min = nums[i].to_i 
+   end
+  end
+
+#  puts("min is #{min}, max is #{max}")
+checksum += max - min
+end
+puts checksum
+
+
+
+
+
